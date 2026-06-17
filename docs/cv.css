@@ -7,7 +7,7 @@
 
 .container {
     width: 95%;
-    margin: 0 auto;
+    margin: 0 5%;
 }
 
 html {
@@ -17,10 +17,12 @@ html {
 
 body {
     width: 210mm;
-    /*height: 297mm;*/
+    height: 297mm;
     margin: 5vh auto;
     background: #ffffff;
     box-shadow: 0px 5px 50px #a0a0a0;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -30,7 +32,7 @@ header > section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 100%;
-    padding-top: 1%;
+    padding-top: 1cm;
 }
 header > section > div {
     height: 10em;
@@ -42,9 +44,9 @@ header > section > div {
 }
 
 main {
+    flex: 1;
     display: grid;
-    grid-template-columns: 3fr auto;
-    height: auto;
+    grid-template-columns: auto auto;
 }
 
 .left_pannel {
@@ -135,18 +137,22 @@ li {
     font-family: monospace;
 }
 
-@page {
-    size: A4 portrait;
-    margin: 0cm;
-    background-color: white;
-    background: white;
-    html {
-        background: white;
-        background-color: white;
+@media (max-width: 210mm) {
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+
+        box-shadow: none;
     }
 }
 
-@media (max-width: 210mm) {
+@page {
+    size: A4 portrait;
+    margin: 0cm;
+}
+
+@media print {
     body {
         width: 100%;
         height: 100%;
@@ -162,6 +168,8 @@ li {
         grid-template-rows: 2fr auto;
 
         grid-template-columns: none;
+    }
+    .separator {
     }
 
     .left_pannel {
