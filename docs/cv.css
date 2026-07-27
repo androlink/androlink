@@ -143,6 +143,12 @@ li {
     /*font-family: monospace;*/
 }
 
+#name > div{
+    display:  flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
 @media (max-width: 210mm) {
     body {
         width: 100%;
